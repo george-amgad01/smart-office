@@ -2,8 +2,6 @@
 
 A Cisco Packet Tracer project that designs a small office network from scratch: four departments, each on its own VLAN, connected through two routers running OSPF.
 
-## The Story
-
 ### The scenario
 
 Picture a small office with four groups of people: **Administration**, **Employees**, **IT**, and **Guests** connecting over Wi-Fi. On a single flat network, all of them share one broadcast domain and one address space. A guest's laptop sits in the same network as the admin team's computers, and any device can broadcast to every other device.
@@ -63,17 +61,6 @@ A four-department office network with separate broadcast domains, a gateway for 
 Router link `192.168.50.0/30`: Router 1 is `.1`, Router 2 is `.2`.
 
 ### Verification
-
-```bash
-! Switches / السويتشات
-show vlan brief              ! VLANs and ports / الـ VLANs والمنافذ
-show interfaces trunk        ! Trunk status / حالة الـ trunk
-
-! Routers / الراوترات
-show ip interface brief      ! Interface addresses / عناوين الواجهات
-show ip route ospf           ! OSPF-learned routes / مسارات OSPF
-show ip ospf neighbor        ! OSPF adjacency / حالة الجوار
-```
 
 Ping tests: VLAN 10 to VLAN 20 (same router), and VLAN 10 to VLAN 30 or 40 (across both routers and OSPF).
 
